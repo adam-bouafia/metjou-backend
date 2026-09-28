@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     # How many passages /v1/ask returns.
     answer_count: int = 3
 
+    # Below this cosine similarity the best passage is flagged as a weak
+    # match, and the app points to a helpline instead. Tune with eval/.
+    min_similarity: float = 0.80
+
 
 @lru_cache
 def get_settings() -> Settings:
