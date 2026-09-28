@@ -1,0 +1,64 @@
+# Pages the assistant may quote. Only official Dutch help organisations.
+# Every source here is fetched with robots.txt respected (see ingest.py).
+# politie.nl is not listed: its robots.txt disallows crawlers.
+#
+# Copyright: Rijksoverheid content is CC0. The other organisations keep the
+# rights to their text; the assistant quotes short passages with a link.
+# Ask them for permission before a public release.
+sources:
+  - organisation: Veilig Thuis
+    urls:
+      - https://www.veiligthuis.nl/nl
+      - https://www.veiligthuis.nl/nl/signalen
+      - https://www.veiligthuis.nl/nl/dwingendecontrole
+      - https://www.veiligthuis.nl/nl/veilig-surfen
+      - https://www.veiligthuis.nl/nl/contact
+
+  - organisation: Centrum Seksueel Geweld
+    urls:
+      - https://centrumseksueelgeweld.nl/
+      - https://centrumseksueelgeweld.nl/seksueel-geweld/
+      - https://centrumseksueelgeweld.nl/aangifte-politie/
+      - https://centrumseksueelgeweld.nl/faq/
+      - https://centrumseksueelgeweld.nl/iemand-steunen/
+      - https://centrumseksueelgeweld.nl/lichamelijke-reacties/
+      - https://centrumseksueelgeweld.nl/gevolgen-langer-geleden/
+      - https://centrumseksueelgeweld.nl/online-seksueel-geweld/
+      - https://centrumseksueelgeweld.nl/praten-over-seksueel-misbruik/
+      - https://centrumseksueelgeweld.nl/mannen/
+      - https://centrumseksueelgeweld.nl/meisjes-en-vrouwen/
+      - https://centrumseksueelgeweld.nl/lhbtiq/
+      - https://centrumseksueelgeweld.nl/studenten/
+      - https://centrumseksueelgeweld.nl/ouders/
+      - https://centrumseksueelgeweld.nl/victim-blaming/
+      - https://centrumseksueelgeweld.nl/zelfhulp/
+      - https://centrumseksueelgeweld.nl/chat-met-het-centrum-seksueel-geweld/
+
+  - organisation: Slachtofferhulp Nederland
+    sitemap: https://www.slachtofferhulp.nl/sitemap.xml
+    include:
+      - /gebeurtenissen/(huiselijk-geweld|seksueel-misbruik-geweld|stalking|mishandeling|bedreiging|straatintimidatie|online-bedreiging|cyberpesten|deepfake|hulp-na-doxing|discriminatie|grensoverschrijdend-gedrag|overval-of-beroving|mensenhandel)/
+      - /strafproces/aangifte-tot-straf/aangifte-doen-bij-de-politie/
+    max_pages: 80
+
+  # Only pages for people who need help or worry about someone. 113's pages
+  # about methods are deliberately never ingested.
+  - organisation: 113 Zelfmoordpreventie
+    urls:
+      - https://www.113.nl/
+      - https://www.113.nl/i/zelfmoordgedachten
+      - https://www.113.nl/i/zelfmoordgedachten-stoppen
+      - https://www.113.nl/i/hoe-ontstaan-zelfmoordgedachten
+      - https://www.113.nl/i/informatie-hulpvragers
+      - https://www.113.nl/i/informatie-naasten
+      - https://www.113.nl/i/hulp-chat
+      - https://www.113.nl/i/telefonische-hulplijn
+      - https://www.113.nl/i/crisisgeval
+
+  - organisation: Rijksoverheid
+    urls:
+      - https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld
+      - https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/huisverbod-en-straf
+      - https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/seksuele-misdrijven
+      - https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/seksuele-misdrijven/wet-seksuele-misdrijven
+      - https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/seksuele-misdrijven/wraakporno
