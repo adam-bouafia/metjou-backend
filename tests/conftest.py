@@ -16,7 +16,7 @@ def conn() -> Iterator[psycopg.Connection]:
     url = os.getenv("METJOU_TEST_DATABASE_URL")
     if not url:
         pytest.skip("METJOU_TEST_DATABASE_URL not set")
-    connection = db.connect(url)
+    connection = db.connect(url, 384)
     connection.execute("truncate documents cascade")
     yield connection
     connection.close()

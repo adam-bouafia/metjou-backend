@@ -1,4 +1,5 @@
 -- Idempotent: applied at every start by db.init_schema().
+-- {dim} is the embedding size of the configured model.
 create extension if not exists vector;
 
 create table if not exists documents (
@@ -15,7 +16,7 @@ create table if not exists passages (
     document_id bigint not null references documents (id) on delete cascade,
     position    int not null,
     text        text not null,
-    embedding   vector(384) not null,
+    embedding   vector({dim}) not null,
     tsv         tsvector generated always as (to_tsvector('dutch', text)) stored
 );
 

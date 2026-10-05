@@ -48,7 +48,7 @@ class AskResponse(BaseModel):
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     # The vector type must exist before connections in the pool register it.
-    db.connect(settings.database_url).close()
+    db.connect(settings.database_url, settings.embedding_dim).close()
     with ConnectionPool(
         settings.database_url, min_size=1, max_size=4, configure=register_vector
     ) as pool:

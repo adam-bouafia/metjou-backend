@@ -55,16 +55,16 @@ class Hit:
     similarity: float
 
 
-def connect(url: str) -> psycopg.Connection:
+def connect(url: str, dim: int) -> psycopg.Connection:
     conn = psycopg.connect(url, autocommit=True)
-    init_schema(conn)
+    init_schema(conn, dim)
     register_vector(conn)
     return conn
 
 
-def init_schema(conn: psycopg.Connection) -> None:
-    sql = files("metjou_backend").joinpath("schema.sql").read_text()
-    conn.execute(sql)
+def init_schema(conn: psycopg.Connection, dim: int) -> None:
+    sql = files("metjou_backend").joinpath("schema.sql").read_text().format(dim=int(dim))
+    conn.execute(sql.encode())
 
 
 def document_hash(conn: psycopg.Connection, url: str) -> str | None:

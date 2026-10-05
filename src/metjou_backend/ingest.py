@@ -132,7 +132,7 @@ class Fetcher:
 
 def run(sources_path: Path) -> None:
     settings = get_settings()
-    conn = db.connect(settings.database_url)
+    conn = db.connect(settings.database_url, settings.embedding_dim)
     embedder = Embedder(settings)
     keep: set[str] = set()
     stats = {"new": 0, "unchanged": 0, "failed": 0}
