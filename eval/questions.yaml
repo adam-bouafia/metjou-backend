@@ -1,0 +1,76 @@
+# Retrieval eval set. A question counts as answered at k when one of the top
+# k answers has a URL containing one of the `expect` fragments.
+# `off_topic` questions have no good answer; their similarity is used to
+# tune METJOU_MIN_SIMILARITY.
+questions:
+  - q: Mijn partner slaat me, wat moet ik doen?
+    expect: [veiligthuis.nl, /huiselijk-geweld/, /mishandeling/]
+  - q: Hoe herken ik huiselijk geweld?
+    expect: [/signalen, signalen-van-huiselijk-geweld]
+  - q: Mijn vriend controleert mijn telefoon en bepaalt met wie ik omga
+    expect: [dwingendecontrole, geestelijke-mishandeling]
+  - q: Hoe kan ik veilig internetten zodat mijn partner niet ziet wat ik zoek?
+    expect: [veilig-surfen]
+  - q: Wat is een tijdelijk huisverbod?
+    expect: [huisverbod]
+  - q: Ik ben verkracht, waar kan ik heen?
+    expect: [verkrachting-of-aanranding, centrumseksueelgeweld.nl]
+  - q: Hoe snel moet ik na een aanranding naar het Centrum Seksueel Geweld?
+    expect: [centrumseksueelgeweld.nl, verkrachting-of-aanranding]
+  - q: Ik verstijfde tijdens het misbruik, is dat normaal?
+    expect: [lichamelijke-reacties]
+  - q: Hoe doe ik aangifte van seksueel misbruik?
+    expect: [aangifte-politie, seksueel-misbruik/contact-met-de-politie]
+  - q: Iemand dreigt mijn naaktfoto's te verspreiden
+    expect: [sextortion, wraakporno, online-seksueel-geweld, exposing]
+  - q: Er staat een nepvideo van mij online met mijn gezicht
+    expect: [deepfake]
+  - q: Mijn ex blijft me berichten sturen en wacht me op bij mijn werk
+    expect: [/stalking/]
+  - q: Hoe verzamel ik bewijs van stalking?
+    expect: [bewijs-verzamelen-van-stalking]
+  - q: Wat is een stopbrief?
+    expect: [stopbrief]
+  - q: Mannen roepen dingen naar me op straat
+    expect: [straatintimidatie]
+  - q: Iemand heeft mijn adres online gezet
+    expect: [doxing]
+  - q: Ik word online bedreigd
+    expect: [online-bedreiging, /bedreiging/]
+  - q: Moet ik aangifte doen of niet?
+    expect: [wel-of-geen-aangifte]
+  - q: Kan de verdachte mijn adres zien als ik aangifte doe?
+    expect: [bescherming-gegevens-bij-aangifte]
+  - q: Hoe bereid ik een aangifte voor?
+    expect: [voorbereiden]
+  - q: Ik heb gedachten over zelfdoding
+    expect: [113.nl]
+  - q: Mijn vriendin wil niet meer leven, hoe kan ik haar helpen?
+    expect: [informatie-naasten, 113.nl]
+  - q: Kan ik anoniem chatten met iemand van 113?
+    expect: [hulp-chat]
+  - q: Hoe steun ik een vriend die seksueel geweld heeft meegemaakt?
+    expect: [iemand-steunen]
+  - q: Ik moet werken zonder loon en mijn paspoort is afgepakt
+    expect: [mensenhandel, arbeidsuitbuiting]
+  - q: Een volwassene praat online met mijn kind en vraagt om foto's
+    expect: [grooming, online-seksueel-geweld, ouders]
+  - q: Ik ben beroofd op straat
+    expect: [overval-of-beroving]
+  # Other languages; sources are Dutch, the model is multilingual.
+  - q: My boyfriend hits me, what should I do?
+    expect: [veiligthuis.nl, /huiselijk-geweld/, /mishandeling/]
+  - q: How do I report stalking to the police?
+    expect: [/stalking/]
+  - q: J'ai été violée, où puis-je aller?
+    expect: [verkrachting-of-aanranding, centrumseksueelgeweld.nl]
+  - q: Alguien me acosa por internet
+    expect: [online-bedreiging, cyberpesten, /stalking/]
+  - q: زوجي يضربني ماذا أفعل
+    expect: [veiligthuis.nl, /huiselijk-geweld/, /mishandeling/]
+off_topic:
+  - Wat is het weer morgen in Amsterdam?
+  - Hoe laat gaat de supermarkt open?
+  - Wat is een goed recept voor pannenkoeken?
+  - How do I reset my router?
+  - Welke trein gaat naar Utrecht?
